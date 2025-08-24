@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nearby Needs</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="config.js"></script>
+  <script defer src="app.js" type="module"></script>
+  <script defer src="map.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <h1>Nearby Needs</h1>
+    <nav><a href="index.html">Report</a></nav>
+  </header>
+  <main>
+    <div class="filters">
+      <select id="filterCategory">
+        <option value="all">All categories</option>
+        <option value="hunger">Hunger</option>
+        <option value="education">Education</option>
+        <option value="medical">Medical</option>
+        <option value="shelter">Shelter</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="filterRadius">
+        <option value="2">Within 2 km</option>
+        <option value="5" selected>Within 5 km</option>
+        <option value="10">Within 10 km</option>
+        <option value="25">Within 25 km</option>
+      </select>
+    </div>
+    <div id="map" style="height:70vh;"></div>
+    <ul id="list"></ul>
+  </main>
+</body>
+</html>

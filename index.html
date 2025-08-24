@@ -1,55 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Help In Need</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report Need</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script defer src="config.js"></script>
+  <script defer src="app.js" type="module"></script>
+  <script defer src="report.js" type="module"></script>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1>Help In Need</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-    </nav>
+    <h1>Report Someone in Need</h1>
+    <nav><a href="map.html">View Map</a></nav>
   </header>
-
-  <!-- Upload Section -->
-  <section class="upload">
-    <h2>Report Someone in Need</h2>
-    <form>
-      <label for="photo">Take / Upload Photo</label>
-      <input type="file" id="photo" accept="image/*" capture="camera">
-
-      <label for="category">Category</label>
-      <select id="category">
-        <option value="hunger">Hunger</option>
-        <option value="education">Education</option>
-        <option value="shelter">Shelter</option>
-      </select>
-
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <!-- Feed Section -->
-  <section class="feed">
-    <h2>Nearby Needs</h2>
-    <div class="card">
-      <img src="sample.jpg" alt="Person in need">
-      <div class="info">
-        <h3>Needy Person</h3>
-        <p>📍 Location auto-tagged here</p>
-        <button>Help</button>
+  <main>
+    <p class="note">Please ensure dignity & consent. Avoid identifiable details unless necessary.</p>
+    <form id="reportForm">
+      <label>Category
+        <select name="category" required>
+          <option value="hunger">Hunger</option>
+          <option value="education">Education</option>
+          <option value="medical">Medical</option>
+          <option value="shelter">Shelter</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Description
+        <textarea name="description" rows="3" placeholder="Short context (optional)"></textarea>
+      </label>
+      <div class="camera">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" class="hidden"></canvas>
+        <button id="snap" type="button">Take Photo</button>
+        <img id="preview" alt="preview" class="hidden" />
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Help In Need</p>
-  </footer>
+      <label>
+        <input type="checkbox" id="blurFaces" /> Blur faces (privacy)
+      </label>
+      <button type="submit">Submit Report</button>
+      <div id="status"></div>
+    </form>
+  </main>
 </body>
 </html>

@@ -1,0 +1,13 @@
+*{box-sizing:border-box} body{font-family:system-ui,Inter,Roboto,sans-serif;margin:0;color:#111}
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid #eee}
+main{max-width:900px;margin:1rem auto;padding:0 1rem}
+label{display:block;margin:.75rem 0}
+select,textarea,button{font:inherit;padding:.6rem;border:1px solid #ddd;border-radius:.6rem}
+button{cursor:pointer}
+.camera{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;margin:1rem 0}
+#video,#preview{width:100%;border-radius:.8rem;border:1px solid #ddd}
+.hidden{display:none}
+.note{font-size:.9rem;color:#666}
+.filters{display:flex;gap:.5rem;margin:.75rem 0}
+#list{list-style:none;padding:0}
+#list li{padding:.5rem 0;border-bottom:1px solid #eee}

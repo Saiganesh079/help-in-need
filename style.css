@@ -1,13 +1,123 @@
-*{box-sizing:border-box} body{font-family:system-ui,Inter,Roboto,sans-serif;margin:0;color:#111}
-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid #eee}
-main{max-width:900px;margin:1rem auto;padding:0 1rem}
-label{display:block;margin:.75rem 0}
-select,textarea,button{font:inherit;padding:.6rem;border:1px solid #ddd;border-radius:.6rem}
-button{cursor:pointer}
-.camera{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;margin:1rem 0}
-#video,#preview{width:100%;border-radius:.8rem;border:1px solid #ddd}
-.hidden{display:none}
-.note{font-size:.9rem;color:#666}
-.filters{display:flex;gap:.5rem;margin:.75rem 0}
-#list{list-style:none;padding:0}
-#list li{padding:.5rem 0;border-bottom:1px solid #eee}
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* Header */
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Upload Section */
+.upload {
+  padding: 2rem;
+  background: white;
+  margin: 1rem auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.upload form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload label {
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+}
+
+.upload input, 
+.upload select, 
+.upload button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.upload button {
+  margin-top: 1.5rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.upload button:hover {
+  background: #45a049;
+}
+
+/* Feed Section */
+.feed {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.card .info {
+  flex: 1;
+}
+
+.card button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #45a049;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #eee;
+  font-size: 0.9rem;
+}
